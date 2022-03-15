@@ -1,0 +1,52 @@
+#modalContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #efefef;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  display: none;
+  margin: 0 auto;
+  & h1 {
+    text-align: center;
+    color: hsl(229, 25%, 31%);
+  } 
+}
+
+.rulesImage {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.closeBtn {
+  width: 100px;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  margin: 0 auto;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover path {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  #modalContainer {
+    width: 80%;
+    height: 80vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  .rulesImage {
+    max-width: 100%;
+  }
+}

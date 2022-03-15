@@ -4,10 +4,12 @@ import paperIcon from "./images/icon-paper.svg";
 import scissorIcon from "./images/icon-scissors.svg";
 import rockIcon from "./images/icon-rock.svg";
 import Option from './components/Option';
+import RulesModal from './components/RulesModal';
 import './styles/header.scss';
 function App() {
   return (
     <>
+      <RulesModal />
       <header className="App-header">
         <img src={logo} alt="logo" />
         <div className="score-container">
@@ -41,7 +43,14 @@ function App() {
         </section>
       </main>
       <footer>
-        <button id="showRulesBtn">Rules</button>
+        <button
+          id="showRulesBtn"
+          onClick={() => {
+            document.getElementById("modalContainer").style.display = "flex";
+          }}
+        >
+          Rules
+        </button>
       </footer>
     </>
   );
