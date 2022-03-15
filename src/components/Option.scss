@@ -1,7 +1,8 @@
 .options {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   column-gap: 150px;
   grid-template: 
@@ -64,6 +65,12 @@
 }
 
 @media screen and (max-width: 430px) {
+  main {
+    margin: 0;
+  }
+  footer {
+    padding-top: 0;
+  }
   .options {
     gap: 40px;
     &::before {

@@ -5,6 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  align-items: center;
 }
 
 img {
@@ -25,4 +26,12 @@ img {
 }
 .score-container h2 {
   color: hsl(229, 25%, 31%);
+}
+  
+@media (min-width: 700px) {
+  header {
+    width: 80% ;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

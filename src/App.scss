@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Barlow Semi Condensed";
 }
 
 body {
@@ -11,12 +12,35 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+  padding: 20px;
 }
 
 main {
   position: relative;
   width: 100%;
-  margin-top: 100px;
-  min-height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 400px;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+#showRulesBtn {
+  color: #efefef;
+  border: 1px solid #efefef;
+  background-color: transparent;
+  width: 100px;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: .5em;
+  font-size: 1em;
+  opacity: .9;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,6 +1,5 @@
 import './App.scss';
 import logo from "./images/logo.svg";
-import triangleBg from "./images/bg-triangle.svg";
 import paperIcon from "./images/icon-paper.svg";
 import scissorIcon from "./images/icon-scissors.svg";
 import rockIcon from "./images/icon-rock.svg";
@@ -8,7 +7,7 @@ import Option from './components/Option';
 import './styles/header.scss';
 function App() {
   return (
-    <div className="App">
+    <>
       <header className="App-header">
         <img src={logo} alt="logo" />
         <div className="score-container">
@@ -41,7 +40,10 @@ function App() {
           />
         </section>
       </main>
-    </div>
+      <footer>
+        <button id="showRulesBtn">Rules</button>
+      </footer>
+    </>
   );
 }
 
