@@ -17,24 +17,23 @@ function App() {
         </div>
       </header>
       <main>
-        <section className="options-container">
-          {/* <div className="triangle-bg">
-            <img src={triangleBg} alt="triangle background" />
-          </div> */}
+        <section className="options">
           <Option
-            className="secondImage"
+            className="paper"
             image={paperIcon}
             name="paper"
             color="hsl(230, 89%, 62%)"
             id={1}
           />
           <Option
+            className="scissors"
             image={scissorIcon}
-            name="scissor"
+            name="scissors"
             color="hsl(39, 89%, 49%)"
             id={2}
           />
           <Option
+            className="rock"
             image={rockIcon}
             name="rock"
             color="hsl(349, 71%, 52%)"

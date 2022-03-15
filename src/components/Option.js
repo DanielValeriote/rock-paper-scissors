@@ -3,7 +3,7 @@ import "./Option.scss";
 const Option = ({image, name, color, id}) => {
   return (
     <div
-      className="option"
+      className={`option ${name}`}
       key={id}
       style={{ border: `10px solid ${color}` }}
     >
