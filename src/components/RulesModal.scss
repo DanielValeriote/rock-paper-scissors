@@ -1,4 +1,4 @@
-#modalContainer{
+#modal{
   position: absolute;
   top: 0;
   left: 0;
@@ -9,12 +9,23 @@
   flex-direction: column;
   justify-content: center;
   gap: 100px;
-  display: none;
   margin: 0 auto;
+  display: flex;
   & h1 {
     text-align: center;
     color: hsl(229, 25%, 31%);
   } 
+}
+
+#modalContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #1919197a;
+  width: 100%;
+  height: inherit;
 }
 
 .rulesImage {
@@ -38,7 +49,7 @@
 }
 
 @media (min-width: 600px) {
-  #modalContainer {
+  #modal {
     width: 80%;
     height: 80vh;
     left: 50%;

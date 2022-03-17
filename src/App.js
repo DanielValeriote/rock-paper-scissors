@@ -5,11 +5,41 @@ import scissorIcon from "./images/icon-scissors.svg";
 import rockIcon from "./images/icon-rock.svg";
 import Option from './components/Option';
 import RulesModal from './components/RulesModal';
+import ResultScreen from './components/ResultScreen';
 import './styles/header.scss';
+import { useState } from "react";
+
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [options, setOptions] = useState({
+    paper: {
+      name: "paper",
+      color: "hsl(230, 89%, 62%)",
+      img: paperIcon,
+    },
+    scissors: {
+      name: "scissors",
+      color: "hsl(39, 89%, 49%)",
+      img: scissorIcon,
+    },
+    rock: {
+      name: "rock",
+      color: "hsl(349, 71%, 52%)",
+      img: rockIcon,
+    },
+  });
+  const [chosenOpt, setChosenOpt] = useState(false)
+
+  const [step, setStep] = useState("options");
+
+  function pickChoice (choosen) {
+    setStep("result");
+    setChosenOpt(choosen)
+  }
+
   return (
     <>
-      <RulesModal />
+      {showModal && <RulesModal onCloseBtnClick={setShowModal} />}
       <header className="App-header">
         <img src={logo} alt="logo" />
         <div className="score-container">
@@ -18,35 +48,35 @@ function App() {
         </div>
       </header>
       <main>
-        <section className="options">
-          <Option
-            className="paper"
-            image={paperIcon}
-            name="paper"
-            color="hsl(230, 89%, 62%)"
-            id={1}
-          />
-          <Option
-            className="scissors"
-            image={scissorIcon}
-            name="scissors"
-            color="hsl(39, 89%, 49%)"
-            id={2}
-          />
-          <Option
-            className="rock"
-            image={rockIcon}
-            name="rock"
-            color="hsl(349, 71%, 52%)"
-            id={3}
-          />
-        </section>
+        {step === "options" && (
+          <section className="options">
+              <Option
+                data={options.paper}
+                className="paper"
+                id={1}
+                onClickFunction={pickChoice}
+              />
+              <Option
+                data={options.scissors}
+                className="scissors"
+                id={2}
+                onClickFunction={pickChoice}
+              />
+              <Option
+                data={options.rock}
+                className="rock"
+                id={3}
+                onClickFunction={pickChoice}
+              />
+          </section>
+        )}
+        {step === "result" && <ResultScreen choosenOption={chosenOpt} />}
       </main>
       <footer>
         <button
           id="showRulesBtn"
           onClick={() => {
-            document.getElementById("modalContainer").style.display = "flex";
+            setShowModal(true);
           }}
         >
           Rules

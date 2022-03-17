@@ -1,14 +1,15 @@
 import "./Option.scss";
 
-const Option = ({image, name, color, id}) => {
+const Option = ({id, onClickFunction, extraClassName, data}) => {
   return (
     <div
-      className={`option ${name}`}
+      className={`option ${data.name} ${extraClassName && extraClassName}`}
       key={id}
-      style={{ border: `10px solid ${color}` }}
+      style={{ border: `10px solid ${data.color}` }}
+      onClick={() => onClickFunction(data)}
     >
       <div className={`option-image`}>
-        <img src={image} alt={name} />
+        <img src={data.img} alt={data.name} />
       </div>
     </div>
   );

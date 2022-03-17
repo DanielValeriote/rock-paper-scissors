@@ -1,0 +1,13 @@
+.chosenOpt {
+  grid-area: choosen;
+}
+
+.houseOpt {
+  grid-area: house;
+}
+
+.resultScreen {
+  display: grid;
+  grid-template: "choosen house" / 1fr 1fr;
+  justify-items: center;
+}

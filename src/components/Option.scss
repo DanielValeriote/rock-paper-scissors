@@ -9,6 +9,7 @@
   "paper scissors" 1fr
   "rock rock" 1fr;
   place-items: center;
+  --before-display: block;
   &::before {
     content: "";
     width: 100%;
@@ -17,7 +18,8 @@
     top: 5%;
     background-image: url(../images/bg-triangle.svg);
     background-repeat: no-repeat;
-    background-position: center center; 
+    background-position: center center;
+    display: var(--before-display);
   }
   & .option:hover {
     cursor: pointer;
@@ -31,9 +33,12 @@
   grid-area: scissors;
 }
 .rock {
-  margin-top: 100px;
   grid-area: rock;
   grid-column: 0/-1;
+}
+
+.options > .rock {
+  margin-top: 100px;
 }
 
 .option {
