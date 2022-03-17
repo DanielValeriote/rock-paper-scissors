@@ -11,7 +11,10 @@ import { useState } from "react";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [options, setOptions] = useState({
+  const [chosenOpt, setChosenOpt] = useState(false)
+  const [step, setStep] = useState("options");
+
+  const options = {
     paper: {
       name: "paper",
       color: "hsl(230, 89%, 62%)",
@@ -27,10 +30,7 @@ function App() {
       color: "hsl(349, 71%, 52%)",
       img: rockIcon,
     },
-  });
-  const [chosenOpt, setChosenOpt] = useState(false)
-
-  const [step, setStep] = useState("options");
+  };
 
   function pickChoice (choosen) {
     setStep("result");
