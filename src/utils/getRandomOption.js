@@ -9,8 +9,8 @@ function getRandomOption() {
       return options.scissors
     case 2:
       return options.rock
+    default: return
   }
-  return
 }
 
 export default getRandomOption;

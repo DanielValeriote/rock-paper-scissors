@@ -8,7 +8,10 @@
 
 .resultScreen {
   display: grid;
-  grid-template: "choosen house" / 1fr 1fr;
+  grid-template: 
+    "choosen house" 5fr
+    "chosenTitle houseTitle" 1fr 
+    "resultTitle resultTitle" 1fr / 1fr 1fr;
   justify-items: center;
 }
 
@@ -17,6 +20,28 @@
 }
 
 .wait  {
-  border: 0 !important;
+  border: 10px solid transparent !important;
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+.chosenOptTitle {
+  grid-area: chosenTitle;
+}
+
+.houseOptTitle {
+  grid-area: houseTitle;
+}
+
+.resultTitle {
+  grid-area: resultTitle;
+  & h1 {
+    font-size: 2rem;
+  }
+}
+
+.chosenOptTitle, .houseOptTitle {
+  color: #efefef;
+  font-weight: lighter;
+  margin-top: 5px;
+  text-shadow: 0px 0px 4px black;
 }

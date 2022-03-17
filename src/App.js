@@ -32,9 +32,9 @@ function App() {
   const [chosenOpt, setChosenOpt] = useState(false)
   const [step, setStep] = useState("options");
 
-  function pickChoice (choosen) {
+  function pickChoice (chosen) {
     setStep("result");
-    setChosenOpt(choosen)
+    setChosenOpt(chosen)
   }
 
   function goToHomePage() {
@@ -75,7 +75,7 @@ function App() {
             />
           </section>
         )}
-        {step === "result" && <ResultScreen choosenOption={chosenOpt} />}
+        {step === "result" && <ResultScreen chosenOption={chosenOpt} />}
       </main>
       <footer>
         <button
