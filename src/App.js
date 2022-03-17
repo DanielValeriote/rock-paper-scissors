@@ -53,20 +53,20 @@ function App() {
               <Option
                 data={options.paper}
                 className="paper"
-                id={1}
                 onClickFunction={pickChoice}
+                id={1}
               />
               <Option
                 data={options.scissors}
                 className="scissors"
-                id={2}
                 onClickFunction={pickChoice}
+                id={2}
               />
               <Option
                 data={options.rock}
                 className="rock"
-                id={3}
                 onClickFunction={pickChoice}
+                id={3}
               />
           </section>
         )}
