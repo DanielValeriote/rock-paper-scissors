@@ -10,6 +10,7 @@ function getRandomOption() {
     case 2:
       return options.rock
   }
+  return
 }
 
 export default getRandomOption;

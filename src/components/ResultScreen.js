@@ -1,12 +1,13 @@
 import "./ResultScreen.scss";
 import Option from "../components/Option";
 import getRandomOption from "../utils/getRandomOption"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 const ResultScreen = ({ choosenOption }) => {
-  const randomOption = getRandomOption();
+  useEffect(()=> {
+    setTimeout(()=> setHouseOpt(getRandomOption), 1000)}, [])
   const [houseOpt, setHouseOpt] = useState({name:"wait"})
-  setTimeout(()=> setHouseOpt(randomOption),1000)
   return (
     <section className="resultScreen">
       <Option data={choosenOption} extraClassName="chosenOpt" id={4} />
