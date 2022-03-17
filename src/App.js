@@ -9,28 +9,30 @@ import ResultScreen from './components/ResultScreen';
 import './styles/header.scss';
 import { useState } from "react";
 
+export const options = {
+  paper: {
+    name: "paper",
+    color: "hsl(230, 89%, 62%)",
+    img: paperIcon,
+  },
+  scissors: {
+    name: "scissors",
+    color: "hsl(39, 89%, 49%)",
+    img: scissorIcon,
+  },
+  rock: {
+    name: "rock",
+    color: "hsl(349, 71%, 52%)",
+    img: rockIcon,
+  },
+};
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [chosenOpt, setChosenOpt] = useState(false)
   const [step, setStep] = useState("options");
 
-  const options = {
-    paper: {
-      name: "paper",
-      color: "hsl(230, 89%, 62%)",
-      img: paperIcon,
-    },
-    scissors: {
-      name: "scissors",
-      color: "hsl(39, 89%, 49%)",
-      img: scissorIcon,
-    },
-    rock: {
-      name: "rock",
-      color: "hsl(349, 71%, 52%)",
-      img: rockIcon,
-    },
-  };
+  
 
   function pickChoice (choosen) {
     setStep("result");
