@@ -45,8 +45,8 @@
   display: inline-block;
   border-radius: 50%;
   border: 10px solid hsl(230, 89%, 65%);
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   position: relative;
   box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
   background-color: #efefef;
@@ -67,14 +67,19 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 50%;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 550px) {
   main {
     margin: 0;
   }
   footer {
     padding-top: 0;
+  }
+  .option {
+    width: 120px;
+    height: 120px;
   }
   .options {
     gap: 40px;

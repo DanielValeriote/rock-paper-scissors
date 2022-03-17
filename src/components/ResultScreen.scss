@@ -59,3 +59,16 @@
   margin-top: 5px;
   text-shadow: 0px 0px 4px black;
 }
+
+@media screen and (min-width: 1090px) {
+  .resultScreen {
+  grid-template: 
+  "chosenTitle ... houseTitle" 1fr 
+    "choosen resultTitle house" 4fr
+    "... btn ..." 3fr 
+    / 2fr 1fr 2fr;
+  }
+  .resultTitle {
+    margin: 0;
+  }
+}
