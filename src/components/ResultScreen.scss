@@ -9,10 +9,14 @@
 .resultScreen {
   display: grid;
   grid-template: 
-    "choosen house" 5fr
+    "choosen house" 4fr
     "chosenTitle houseTitle" 1fr 
-    "resultTitle resultTitle" 1fr / 1fr 1fr;
+    "resultTitle resultTitle" 3fr 
+    "btn btn" 3fr
+    / 1fr 1fr;
   justify-items: center;
+  align-items: center;
+  color: #efefef;
 }
 
 .wait .option-image {
@@ -34,13 +38,23 @@
 
 .resultTitle {
   grid-area: resultTitle;
-  & h1 {
-    font-size: 2rem;
-  }
+  font-size: 3.5rem;
+  margin-top: 40px;
+}
+
+.playAgain {
+  grid-area: btn;
+  background-color: #efefef;
+  color: #3b4363;
+  width: 200px;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
 }
 
 .chosenOptTitle, .houseOptTitle {
-  color: #efefef;
   font-weight: lighter;
   margin-top: 5px;
   text-shadow: 0px 0px 4px black;

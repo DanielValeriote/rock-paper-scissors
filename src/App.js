@@ -7,7 +7,8 @@ import Option from './components/Option';
 import RulesModal from './components/RulesModal';
 import ResultScreen from './components/ResultScreen';
 import './styles/header.scss';
-import { useState } from "react";
+import { useState, createContext } from "react";
+export const ScoreContext = createContext("main");
 
 export const options = {
   paper: {
@@ -30,6 +31,7 @@ export const options = {
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [chosenOpt, setChosenOpt] = useState(false)
+  const [score, setScore] = useState(0)
   const [step, setStep] = useState("options");
 
   function pickChoice (chosen) {
@@ -44,12 +46,13 @@ function App() {
 
   return (
     <>
+    <ScoreContext.Provider value={{score, setScore}}>
       {showModal && <RulesModal onCloseBtnClick={setShowModal} />}
       <header className="App-header">
         <img onClick={()=>goToHomePage()} src={logo} alt="logo" />
         <div className="score-container">
           <h5>score</h5>
-          <h2>12</h2>
+          <h2>{score}</h2>
         </div>
       </header>
       <main>
@@ -75,7 +78,7 @@ function App() {
             />
           </section>
         )}
-        {step === "result" && <ResultScreen chosenOption={chosenOpt} />}
+        {step === "result" && <ResultScreen backToHomeFnc={goToHomePage} chosenOption={chosenOpt} scoreUpdater={setScore} />}
       </main>
       <footer>
         <button
@@ -87,6 +90,7 @@ function App() {
           Rules
         </button>
       </footer>
+    </ScoreContext.Provider>
     </>
   );
 }
