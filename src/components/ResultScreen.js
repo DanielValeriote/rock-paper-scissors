@@ -25,9 +25,19 @@ const ResultScreen = ({ chosenOption, backToHomeFnc }) => {
 
   return (
     <section className="resultScreen">
-      <Option data={chosenOption} extraClassName="chosenOpt" id={4} />
+      <Option
+        data={chosenOption}
+        extraClassName="chosenOpt"
+        highlighted={result.value === "YOU WIN" || false}
+        id={4}
+      ></Option>
       <h3 className="chosenOptTitle">YOU PICKED</h3>
-      <Option data={houseOpt} extraClassName="houseOpt" id={5} />
+      <Option
+        data={houseOpt}
+        extraClassName="houseOpt highlitedOption"
+        highlighted={result.value === "YOU LOSE" || false}
+        id={5}
+      ></Option>
       <h3 className="houseOptTitle">THE HOUSE PICKED</h3>
       {result.value && (
         <>

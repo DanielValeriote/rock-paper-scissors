@@ -17,6 +17,7 @@
   justify-items: center;
   align-items: center;
   color: #efefef;
+  margin-top: 50px;
 }
 
 .wait .option-image {
@@ -30,6 +31,19 @@
 
 .chosenOptTitle {
   grid-area: chosenTitle;
+  // position: relative;
+}
+
+.lightContainer1 {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .houseOptTitle {
