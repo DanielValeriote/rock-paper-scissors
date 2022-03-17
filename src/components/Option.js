@@ -6,7 +6,7 @@ const Option = ({id, onClickFunction, extraClassName, data}) => {
       className={`option ${data.name} ${extraClassName && extraClassName}`}
       key={id}
       style={{ border: `10px solid ${data.color}` }}
-      onClick={() => onClickFunction(data)}
+      onClick={() => onClickFunction && onClickFunction(data)}
     >
       <div className={`option-image`}>
         <img src={data.img} alt={data.name} />

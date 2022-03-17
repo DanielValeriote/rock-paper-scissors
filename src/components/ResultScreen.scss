@@ -11,3 +11,12 @@
   grid-template: "choosen house" / 1fr 1fr;
   justify-items: center;
 }
+
+.wait .option-image {
+  opacity: 0;
+}
+
+.wait  {
+  border: 0 !important;
+  background-color: rgba(0, 0, 0, 0.15);
+}

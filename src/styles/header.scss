@@ -11,6 +11,9 @@ header {
 header img {
   width: 35%;
   max-width: 200px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .score-container {

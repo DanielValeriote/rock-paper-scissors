@@ -1,24 +1,16 @@
 import "./ResultScreen.scss";
-import paperIcon from "../images/icon-paper.svg";
-import scissorIcon from "../images/icon-scissors.svg";
-import rockIcon from "../images/icon-rock.svg";
 import Option from "../components/Option";
 import getRandomOption from "../utils/getRandomOption"
+import { useState } from "react";
 
 const ResultScreen = ({ choosenOption }) => {
   const randomOption = getRandomOption();
+  const [houseOpt, setHouseOpt] = useState({name:"wait"})
+  setTimeout(()=> setHouseOpt(randomOption),1000)
   return (
     <section className="resultScreen">
-      <Option
-        data={choosenOption}
-        extraClassName="chosenOpt"
-        id={4}
-      />
-      <Option
-        data={randomOption}
-        extraClassName="houseOpt"
-        id={5}
-      />
+      <Option data={choosenOption} extraClassName="chosenOpt" id={4} />
+      <Option data={houseOpt} extraClassName="houseOpt" id={5} />
     </section>
   );
 };

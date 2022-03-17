@@ -32,18 +32,21 @@ function App() {
   const [chosenOpt, setChosenOpt] = useState(false)
   const [step, setStep] = useState("options");
 
-  
-
   function pickChoice (choosen) {
     setStep("result");
     setChosenOpt(choosen)
+  }
+
+  function goToHomePage() {
+    setStep("options");
+    setChosenOpt(false);
   }
 
   return (
     <>
       {showModal && <RulesModal onCloseBtnClick={setShowModal} />}
       <header className="App-header">
-        <img src={logo} alt="logo" />
+        <img onClick={()=>goToHomePage()} src={logo} alt="logo" />
         <div className="score-container">
           <h5>score</h5>
           <h2>12</h2>
@@ -52,24 +55,24 @@ function App() {
       <main>
         {step === "options" && (
           <section className="options">
-              <Option
-                data={options.paper}
-                className="paper"
-                onClickFunction={pickChoice}
-                id={1}
-              />
-              <Option
-                data={options.scissors}
-                className="scissors"
-                onClickFunction={pickChoice}
-                id={2}
-              />
-              <Option
-                data={options.rock}
-                className="rock"
-                onClickFunction={pickChoice}
-                id={3}
-              />
+            <Option
+              data={options.paper}
+              className="paper"
+              onClickFunction={pickChoice}
+              id={1}
+            />
+            <Option
+              data={options.scissors}
+              className="scissors"
+              onClickFunction={pickChoice}
+              id={2}
+            />
+            <Option
+              data={options.rock}
+              className="rock"
+              onClickFunction={pickChoice}
+              id={3}
+            />
           </section>
         )}
         {step === "result" && <ResultScreen choosenOption={chosenOpt} />}
