@@ -5,7 +5,6 @@
   transform: translate(-50%, -50%);
   display: grid;
   column-gap: 150px;
-  margin-top: 50px;
   grid-template: 
   "paper scissors" 1fr
   "rock rock" 1fr;
@@ -46,8 +45,8 @@
   display: inline-block;
   border-radius: 50%;
   border: 10px solid hsl(230, 89%, 65%);
-  width: 180px;
-  height: 180px;
+  width: 145px;
+  height: 145px;
   position: relative;
   box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
   background-color: #efefef;

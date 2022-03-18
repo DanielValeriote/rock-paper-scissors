@@ -18,8 +18,7 @@ body {
 main {
   position: relative;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   min-height: 400px;
 }
 
@@ -27,7 +26,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
 }
 
 #showRulesBtn {
