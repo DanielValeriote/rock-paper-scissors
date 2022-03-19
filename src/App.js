@@ -8,6 +8,7 @@ import RulesModal from './components/RulesModal';
 import ResultScreen from './components/ResultScreen';
 import './styles/header.scss';
 import { useState, createContext } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 export const ScoreContext = createContext("main");
 
 export const options = {
@@ -46,51 +47,80 @@ function App() {
 
   return (
     <>
-    <ScoreContext.Provider value={{score, setScore}}>
-      {showModal && <RulesModal onCloseBtnClick={setShowModal} />}
-      <header className="App-header">
-        <img onClick={()=>goToHomePage()} src={logo} alt="logo" />
-        <div className="score-container">
-          <h5>score</h5>
-          <h2>{score}</h2>
-        </div>
-      </header>
-      <main>
-        {step === "options" && (
-          <section className="options">
-            <Option
-              data={options.paper}
-              className="paper"
-              onClickFunction={pickChoice}
-              id={1}
+      <ScoreContext.Provider value={{ score, setScore }}>
+        {showModal && <RulesModal onCloseBtnClick={setShowModal} />}
+        <header className="App-header">
+          <img onClick={() => goToHomePage()} src={logo} alt="logo" />
+          <div className="score-container">
+            <h5>score</h5>
+            <h2>{score}</h2>
+          </div>
+        </header>
+        <main>
+          {step === "options" && (
+            <section className="options">
+              <Option
+                data={options.paper}
+                className="paper"
+                onClickFunction={pickChoice}
+                id={1}
+              />
+              <Option
+                data={options.scissors}
+                className="scissors"
+                onClickFunction={pickChoice}
+                id={2}
+              />
+              <Option
+                data={options.rock}
+                className="rock"
+                onClickFunction={pickChoice}
+                id={3}
+              />
+            </section>
+          )}
+          {step === "result" && (
+            <ResultScreen
+              backToHomeFnc={goToHomePage}
+              chosenOption={chosenOpt}
+              scoreUpdater={setScore}
             />
-            <Option
-              data={options.scissors}
-              className="scissors"
-              onClickFunction={pickChoice}
-              id={2}
-            />
-            <Option
-              data={options.rock}
-              className="rock"
-              onClickFunction={pickChoice}
-              id={3}
-            />
-          </section>
-        )}
-        {step === "result" && <ResultScreen backToHomeFnc={goToHomePage} chosenOption={chosenOpt} scoreUpdater={setScore} />}
-      </main>
-      <footer>
-        <button
-          id="showRulesBtn"
-          onClick={() => {
-            setShowModal(true);
-          }}
-        >
-          Rules
-        </button>
-      </footer>
-    </ScoreContext.Provider>
+          )}
+        </main>
+        <footer>
+          <button
+            id="showRulesBtn"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            Rules
+          </button>
+          <div className="credits">
+            <h5>Project created by Daniel Valeriote</h5>
+            <ul className="link-icons">
+              <li>
+                <a
+                  href="https://github.com/DanielValeriote"
+                  rel="external"
+                  target="_blank"
+                >
+                  <FaGithub size={30} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/daniel-valeriote/"
+                  rel="external"
+                  target="_blank"
+                >
+                  <FaLinkedin size={30} />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </ScoreContext.Provider>
     </>
   );
 }
