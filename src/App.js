@@ -102,7 +102,7 @@ function App() {
               <li>
                 <a
                   href="https://github.com/DanielValeriote"
-                  rel="external"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <FaGithub size={30} />
@@ -111,7 +111,7 @@ function App() {
               <li>
                 <a
                   href="https://www.linkedin.com/in/daniel-valeriote/"
-                  rel="external"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <FaLinkedin size={30} />
