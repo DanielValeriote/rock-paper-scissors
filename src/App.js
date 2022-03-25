@@ -1,33 +1,13 @@
 import './App.scss';
+import './styles/header.scss';
 import logo from "./images/logo.svg";
-import paperIcon from "./images/icon-paper.svg";
-import scissorIcon from "./images/icon-scissors.svg";
-import rockIcon from "./images/icon-rock.svg";
-import Option from './components/Option';
+import AllOptions from './components/AllOptions';
 import RulesModal from './components/RulesModal';
 import ResultScreen from './components/ResultScreen';
-import './styles/header.scss';
 import { useState, createContext } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-export const ScoreContext = createContext("main");
 
-export const options = {
-  paper: {
-    name: "paper",
-    color: "hsl(230, 89%, 62%)",
-    img: paperIcon,
-  },
-  scissors: {
-    name: "scissors",
-    color: "hsl(39, 89%, 49%)",
-    img: scissorIcon,
-  },
-  rock: {
-    name: "rock",
-    color: "hsl(349, 71%, 52%)",
-    img: rockIcon,
-  },
-};
+export const ScoreContext = createContext("main");
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -57,28 +37,7 @@ function App() {
           </div>
         </header>
         <main>
-          {step === "options" && (
-            <section className="options">
-              <Option
-                data={options.paper}
-                className="paper"
-                onClickFunction={pickChoice}
-                id={1}
-              />
-              <Option
-                data={options.scissors}
-                className="scissors"
-                onClickFunction={pickChoice}
-                id={2}
-              />
-              <Option
-                data={options.rock}
-                className="rock"
-                onClickFunction={pickChoice}
-                id={3}
-              />
-            </section>
-          )}
+          {step === "options" && <AllOptions pickChoice={pickChoice} />}
           {step === "result" && (
             <ResultScreen
               backToHomeFnc={goToHomePage}

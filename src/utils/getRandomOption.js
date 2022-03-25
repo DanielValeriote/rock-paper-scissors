@@ -1,4 +1,4 @@
-import {options} from "../App";
+import {options} from "../components/AllOptions";
 
 function getRandomOption() {
   let random = Math.floor(Math.random() * 3)
